@@ -61,13 +61,13 @@ resource "aws_acm_certificate" "server" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name_prefix       = var.name
+  name              = var.name
   retention_in_days = var.cloudwatch_log_retention_days
   tags              = var.tags
 }
 
 resource "aws_cloudwatch_log_stream" "this" {
-  name_prefix    = var.name
+  name           = var.name
   log_group_name = aws_cloudwatch_log_group.this.name
 }
 
