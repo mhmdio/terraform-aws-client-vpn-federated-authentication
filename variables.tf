@@ -93,6 +93,12 @@ variable "saml_metadata_document" {
   type        = string
 }
 
+variable "saml_provider_arn" {
+  default     = null
+  description = "Optional SAML ARN. Must include this or `saml_metadata_document`"
+  type        = string
+}
+
 variable "split_tunnel_enabled" {
   default     = true
   description = "Whether to enable split tunnelling"
