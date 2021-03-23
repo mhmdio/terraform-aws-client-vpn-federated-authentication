@@ -1,3 +1,8 @@
+output "sg_id" {
+  description = "The ID of the SG for Client VPN."
+  value       = aws_security_group.this.id
+}
+
 output "vpn_id" {
   description = "The ID of the Client VPN endpoint."
   value       = aws_ec2_client_vpn_endpoint.this.id
