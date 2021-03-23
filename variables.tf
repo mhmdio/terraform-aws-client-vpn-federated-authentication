@@ -115,3 +115,9 @@ variable "vpc_id" {
   type        = string
   description = "ID of VPC to attach VPN to"
 }
+
+variable "dns_servers" {
+  type        = list(string)
+  description = "List of DNS Server for VPN"
+  default     = null
+}
