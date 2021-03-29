@@ -119,5 +119,5 @@ variable "vpc_id" {
 variable "dns_servers" {
   type        = list(string)
   description = "List of DNS Server for VPN"
-  default     = null
+  default     = []
 }
