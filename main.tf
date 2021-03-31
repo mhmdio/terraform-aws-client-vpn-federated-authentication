@@ -74,6 +74,7 @@ resource "aws_cloudwatch_log_stream" "this" {
 resource "aws_iam_saml_provider" "this" {
   count                  = var.saml_metadata_document != null ? 1 : 0
   name                   = var.name
+  tags                   = var.tags
   saml_metadata_document = var.saml_metadata_document
 }
 
