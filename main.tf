@@ -87,9 +87,9 @@ resource "aws_ec2_client_vpn_endpoint" "this" {
 
   tags = merge(
     var.tags,
-    tomap(
-      "Name", var.name,
-    )
+    tomap({
+      Name = var.name
+    })
   )
 
   authentication_options {
