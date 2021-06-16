@@ -7,15 +7,15 @@ Terraform module for aws-client-vpn with federated-authentication
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 0.14.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.32 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.45 |
 | <a name="requirement_tls"></a> [tls](#requirement\_tls) | ~> 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.32 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.45 |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | ~> 3.1.0 |
 
 ## Modules
@@ -53,7 +53,7 @@ No modules.
 | <a name="input_client_cidr_block"></a> [client\_cidr\_block](#input\_client\_cidr\_block) | VPN CIDR Block | `string` | n/a | yes |
 | <a name="input_cloudwatch_log_retention_days"></a> [cloudwatch\_log\_retention\_days](#input\_cloudwatch\_log\_retention\_days) | How long to keep VPN logs. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653, and 0. If you select 0, the events in the log group are always retained and never expire. | `number` | `30` | no |
 | <a name="input_description"></a> [description](#input\_description) | Resource description | `string` | n/a | yes |
-| <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | List of DNS Server for VPN | `list(string)` | `null` | no |
+| <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | List of DNS Server for VPN | `list(string)` | `[]` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain Name to associate with ACM common name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name to associate with various resources | `string` | n/a | yes |
 | <a name="input_saml_metadata_document"></a> [saml\_metadata\_document](#input\_saml\_metadata\_document) | Optional SAML metadata document. Must include this or `saml_provider_arn` | `string` | `null` | no |
