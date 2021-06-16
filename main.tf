@@ -87,7 +87,7 @@ resource "aws_ec2_client_vpn_endpoint" "this" {
 
   tags = merge(
     var.tags,
-    map(
+    tomap(
       "Name", var.name,
     )
   )
