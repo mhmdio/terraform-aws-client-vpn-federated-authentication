@@ -1,4 +1,4 @@
-# AWS Client VPM Deployment with federated-authentication
+# AWS Client VPN Deployment with federated-authentication
 
 Terraform module for aws-client-vpn with federated-authentication
 
