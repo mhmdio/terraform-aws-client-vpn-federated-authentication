@@ -99,6 +99,12 @@ variable "saml_provider_arn" {
   type        = string
 }
 
+variable "self_service_portal" {
+  default     = "disabled"
+  description = "Optionally specify whether to enable the VPC Client self-service portal. Default is disabled"
+  type        = string
+}
+
 variable "split_tunnel_enabled" {
   default     = true
   description = "Whether to enable split tunnelling"
