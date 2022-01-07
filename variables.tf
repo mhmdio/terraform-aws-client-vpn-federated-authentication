@@ -101,7 +101,7 @@ variable "saml_provider_arn" {
 
 variable "self_service_portal" {
   default     = "disabled"
-  description = "Optionally specify whether to enable the VPC Client self-service portal. Default is disabled"
+  description = "Optionally specify whether the VPC Client self-service portal is enabled or disabled. Default is disabled"
   type        = string
 }
 
