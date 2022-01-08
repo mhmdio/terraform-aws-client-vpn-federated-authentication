@@ -83,6 +83,7 @@ resource "aws_ec2_client_vpn_endpoint" "this" {
   client_cidr_block      = var.client_cidr_block
   server_certificate_arn = aws_acm_certificate.server.arn
   split_tunnel           = var.split_tunnel_enabled
+  self_service_portal    = var.self_service_portal
   dns_servers            = length(var.dns_servers) > 0 ? var.dns_servers : null
 
   tags = merge(

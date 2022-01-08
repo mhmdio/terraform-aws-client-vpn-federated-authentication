@@ -58,6 +58,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name to associate with various resources | `string` | n/a | yes |
 | <a name="input_saml_metadata_document"></a> [saml\_metadata\_document](#input\_saml\_metadata\_document) | Optional SAML metadata document. Must include this or `saml_provider_arn` | `string` | `null` | no |
 | <a name="input_saml_provider_arn"></a> [saml\_provider\_arn](#input\_saml\_provider\_arn) | Optional SAML ARN. Must include this or `saml_metadata_document` | `string` | `null` | no |
+| <a name="input_self_service_portal"></a> [self\_service\_portal](#input\_self\_service\_portal) | Specify whether the VPC Client self-service portal is enabled or disabled | `string` | `disabled` | no |
 | <a name="input_split_tunnel_enabled"></a> [split\_tunnel\_enabled](#input\_split\_tunnel\_enabled) | Whether to enable split tunnelling | `bool` | `true` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of strings containing tags for AWS resources | `map(string)` | `{}` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | ID of VPC to attach VPN to | `string` | n/a | yes |
