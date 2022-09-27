@@ -1,0 +1,33 @@
+name: infracost
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  infracost:
+    name: infracost
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    env:
+      TF_ROOT: .
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Infracost Actions
+        uses: infracost/actions@v2.0.0
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: Generate Infracost cost estimate
+        run: |
+          infracost breakdown --path=${TF_ROOT} \
+                              --format=json \
+                              --out-file=/tmp/infracost.json

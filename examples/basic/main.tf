@@ -5,7 +5,7 @@ module "client-vpn-federated-authentication" {
   name                   = "${local.name}-vpn"
   description            = "${local.name}-vpn"
   tags                   = local.tags
-  domain_name            = "aws.mhmd.io"
+  domain_name            = "aws.cloudfalcon.io"
   saml_metadata_document = fileexists("../../../config/AWS_Client_VPN.xml") ? file("../../../config/AWS_Client_VPN.xml") : null
   client_cidr_block      = "10.0.99.0/24"
   vpc_id                 = module.vpc.vpc_id

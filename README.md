@@ -8,15 +8,15 @@ Terraform module for aws-client-vpn with federated-authentication
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.45 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0.0 |
 | <a name="requirement_tls"></a> [tls](#requirement\_tls) | ~> 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.45 |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | ~> 3.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.72.0 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | 3.1.0 |
 
 ## Modules
 
@@ -58,10 +58,12 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name to associate with various resources | `string` | n/a | yes |
 | <a name="input_saml_metadata_document"></a> [saml\_metadata\_document](#input\_saml\_metadata\_document) | Optional SAML metadata document. Must include this or `saml_provider_arn` | `string` | `null` | no |
 | <a name="input_saml_provider_arn"></a> [saml\_provider\_arn](#input\_saml\_provider\_arn) | Optional SAML ARN. Must include this or `saml_metadata_document` | `string` | `null` | no |
-| <a name="input_self_service_portal"></a> [self\_service\_portal](#input\_self\_service\_portal) | Specify whether the VPC Client self-service portal is enabled or disabled | `string` | `disabled` | no |
+| <a name="input_self_service_portal"></a> [self\_service\_portal](#input\_self\_service\_portal) | Optionally specify whether the VPC Client self-service portal is enabled or disabled. Default is disabled | `string` | `"disabled"` | no |
 | <a name="input_split_tunnel_enabled"></a> [split\_tunnel\_enabled](#input\_split\_tunnel\_enabled) | Whether to enable split tunnelling | `bool` | `true` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of strings containing tags for AWS resources | `map(string)` | `{}` | no |
+| <a name="input_transport_protocol"></a> [transport\_protocol](#input\_transport\_protocol) | The transport protocol to be used by the VPN session. Default value is `udp`. | `string` | `"udp"` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | ID of VPC to attach VPN to | `string` | n/a | yes |
+| <a name="input_vpn_port"></a> [vpn\_port](#input\_vpn\_port) | The port number for the Client VPN endpoint. Valid values are 443 and 1194. Default value is 443. | `number` | `443` | no |
 
 ## Outputs
 

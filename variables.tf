@@ -127,3 +127,15 @@ variable "dns_servers" {
   description = "List of DNS Server for VPN"
   default     = []
 }
+
+variable "transport_protocol" {
+  type        = string
+  description = "The transport protocol to be used by the VPN session. Default value is `udp`."
+  default     = "udp"
+}
+
+variable "vpn_port" {
+  type        = number
+  description = "The port number for the Client VPN endpoint. Valid values are 443 and 1194. Default value is 443."
+  default     = 443
+}
