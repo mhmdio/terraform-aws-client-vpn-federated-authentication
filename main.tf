@@ -140,7 +140,7 @@ resource "aws_ec2_client_vpn_network_association" "this" {
 }
 
 resource "aws_ec2_client_vpn_authorization_rule" "rules" {
-  for_each               = toset(var.authorization_rules)
+  for_each               = { for rule in var.authorization_rules : rule.name => rule }
   client_vpn_endpoint_id = aws_ec2_client_vpn_endpoint.this.id
   access_group_id        = each.value.access_group_id
   authorize_all_groups   = each.value.authorize_all_groups
@@ -150,7 +150,7 @@ resource "aws_ec2_client_vpn_authorization_rule" "rules" {
 }
 
 resource "aws_ec2_client_vpn_route" "additional" {
-  for_each               = toset(var.additional_routes)
+  for_each               = { for route in var.additional_routes : route.description => route }
   client_vpn_endpoint_id = aws_ec2_client_vpn_endpoint.this.id
   description            = try(each.value.description, var.description)
   destination_cidr_block = each.value.destination_cidr_block
