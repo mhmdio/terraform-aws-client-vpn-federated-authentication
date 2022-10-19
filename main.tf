@@ -84,6 +84,7 @@ resource "aws_ec2_client_vpn_endpoint" "this" {
   dns_servers            = length(var.dns_servers) > 0 ? var.dns_servers : null
   transport_protocol     = var.transport_protocol
   vpn_port               = var.vpn_port
+  vpc_id                 = var.vpc_id
 
   security_group_ids = concat(
     [aws_security_group.this.id],
