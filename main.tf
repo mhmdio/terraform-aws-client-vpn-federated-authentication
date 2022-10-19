@@ -150,7 +150,7 @@ resource "aws_ec2_client_vpn_authorization_rule" "rules" {
 }
 
 resource "aws_ec2_client_vpn_route" "additional" {
-  for_each               = { for route in var.additional_routes : route.description => route }
+  for_each               = { for route in var.additional_routes : "${route.description} + ${route.target_vpc_subnet_id}" => route }
   client_vpn_endpoint_id = aws_ec2_client_vpn_endpoint.this.id
   description            = try(each.value.description, var.description)
   destination_cidr_block = each.value.destination_cidr_block
